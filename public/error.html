@@ -4,23 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Important: Use &zwnj; to mess with keywords.  -->
-    <title>Ta&zwnj;co Pr&zwnj;oxy</title>
-    <meta name="description" content="A no&zwnj;de.js web pr&zwnj;oxy featuring UR&zwnj;L enco&zwnj;ding, and amazing compatablity!">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>ERROR</title>
+    <style>
+        body {
+            background-image: url('https://s12.gifyu.com/images/SV5xS.gif');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        .error-message {
+            font-size: 45px; /* Increased font size */
+            font-weight: bold; /* Made text bold */
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <p> <span class="black_text">Error. Maybe you forgot to add "https://" to your URL?</span> </p> 
+        <h2 class="error-message">ERROR: Maybe add "https://" to the URL</h2>
+        <button class="button" onclick="goBack()">Back</button>
     </div>
-    <!--Scripts-->
-    <script src="/assets/js/surf.js"></script>
-    <script async src="https://arc.io/widget.min.js#JknU9r2S"></script>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 
 </html>
