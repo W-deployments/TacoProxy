@@ -1,34 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Important: Use &zwnj; to mess with keywords.  -->
-	<title>Ta&zwnj;co Pr&zwnj;oxy</title>
-	<meta name="description" content="A no&zwnj;de.js web pr&zwnj;oxy featuring UR&zwnj;L enco&zwnj;ding, and amazing compatablity!">
-	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon.png">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="/assets/css/styles.css"> </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINEAR PROXY</title>
+    <meta name="description" content="A Node.js web proxy featuring URL encoding and amazing compatibility">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            background-image: url('background.gif');
+            background-size: cover;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 40px;
+            text-align: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .container {
+            margin-top: 80px;
+        }
+        .white_text {
+            color: #fff;
+            font-size: 3em;
+        }
+        /* Form styles */
+        .url {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        input[type="text"],
+        .btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 0 5px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            flex: 0.7;
+            max-width: 300px;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+        .instructions {
+            color: #fff;
+            font-size: 16px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        /* Footer styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px 0;
+            font-size: 14px;
+            backdrop-filter: blur(8px);
+        }
+        footer a {
+            color: #ccc;
+        }
+        .credits-button {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 20px;
+            z-index: 999;
+        }
+    </style>
+    <script>
+        // Create a link element for the favicon
+        var link = document.createElement('link');
+        link.rel = 'shortcut icon';
+        link.type = 'image/x-icon';
+        link.href = '/favicon.ico'; // Path to your favicon file
 
+        // Append the link element to the head of the document
+        document.head.appendChild(link);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-size: 2.3em;">LINEAR<br>PROXY</h1>
+        <form class="url" method="POST" onsubmit="return false;">
+            <input name="url" id="iurl" autocomplete="off" placeholder="https://website.com" type="text">
+            <button class="btn" type="submit" id="alloydefault">Search!</button>
+        </form>
+        <p class="instructions">Enter a full URL, otherwise it won't work.</p>
+    </div>
+    <button class="credits-button" onclick="window.location.href='https://github.com/HoiBoiPr0xies/LinearProxy'">GitHub</button>
+    <footer>HTML by: Louis DiBiasi (discord=h_ac_k_z) - LINEAR PROXY 2024 NOCOPYRIGHT</footer>
+    <!--Scripts-->
+    <script src="/assets/js/surf.js"></script>
+    <script async src="https://arc.io/widget.min.js#JknU9r2S"></script>
+    <script>
+        document.getElementById('iurl').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('alloydefault').click();
+            }
+        });
+    </script>
 </body>
-	<!--Display Frame-->
-	<iframe id="frame" style="display:block; visibility: hidden;"></iframe>
-	<div class="container">
-		<p> <span class="black_text">Ta&zwnj;co Pro&zwnj;xy</span> </p>
-		<form class="url" method="POST">
-			<input name="url" id="iurl" autocomplete="off" placeholder="https://example.com" type="text">
-			<button class="btn" type="submit" id="alloydefault">Norm&zwnj;al</button>
-			<button class="btn" type="submit" id="alloyframe">Hidd&zwnj;en</button> <a id="tacogithub" href="">GitHub</a> </form>
-	</div>
-    	<div style="position: relative; text-align: center">
-      <p style="position: fixed; bottom: 0; width:100%;">Copyright (c) 2020-2021 Tacosheel</p>
-    	</div>
-	<!--Scripts-->
-	<script src="/assets/js/surf.js"></script>
-	<script async src="https://arc.io/widget.min.js#JknU9r2S"></script>
-</body>
-
 </html>
